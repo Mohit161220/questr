@@ -10,10 +10,14 @@ const questionSchema = mongoose.Schema({
 		required: true,
 		ref: "User"
 	},
-	topic: {
+	topics: {
 		type: mongoose.Schema.Types.ObjectId,
-		required: true,
+		// required: true,
 		ref: "Topic"
+	},
+	title : { // title of the question
+		type : String,
+		required : true
 	},
 	answers: [
 		{
