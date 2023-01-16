@@ -1,4 +1,12 @@
 const express = require('express');
-const route = express.Router(); //The express.Router() function is used to create a new router object. This function is used when you want to create a new router object in your program to handle requests.
+const route = express.Router();
+const homeController = require('../controllers/home_controller');
+
 console.log('routes -> index.js');
+//localhost:3000/
+route.get('/', homeController.home);
+route.use('/users', require('./users'));
+route.use('/questions', require('./questions'));
+route.use('/topics', require('./topics'));
+
 module.exports = route;
