@@ -88,7 +88,7 @@ export default function Login() {
         <div className="relative flex items-center justify-center w-full mt-6 border border-t">
           <div className="absolute px-5 bg-white">Or</div>
         </div>
-        <div className="flex items-center justify-center mt-4 gap-x-2">
+        <div className="flex items-center justify-center mt-6 gap-x-2">
           <button
             type="button"
             className="flex items-center justify-center mx-4  p-3 border border-gray-600 rounded-full focus:ring-2 focus:ring-offset-1 focus:ring-violet-600"

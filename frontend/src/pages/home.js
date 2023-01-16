@@ -1,30 +1,12 @@
-import Sidebar from '../components/Sidebar';
-import Feedbar from '../components/Feedbar';
-import Rightscrollbar from '../components/Rightscrollbar';
+import React, { useState } from "react";
 
-
-
-
-export default function Home() {
+function Home() {
   return (
-    <div className=' bg-white min-h-screen'>
-    
-
-      <main className=' h-full'>
-        <div className='grid grid-cols-10 p-3 mx-2'>
-          {/* sidebar */}
-
-          <Sidebar />
-          {/* feedsection */}
-          <Feedbar />
-          {/*  */}
-
-          <Rightscrollbar />
-        </div>
-
-
-
-      </main>
+    <div className="p-5">
+      <div>
+        <h1 className="text-xl font-semibold">Top Questions</h1>
+      </div>
     </div>
-  )
+  );
 }
+export default Home;
