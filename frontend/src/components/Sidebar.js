@@ -1,30 +1,14 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 export default function Sidebar() {
   return (
-    <div className="hidden md:flex fixed left-0 ">
-      <div className="flex flex-col h-screen p-3 bg-gray-800 shadow w-52 items-center">
-      <Link className="flex items-center hover:bg-gray-700 hover:rounded-lg">
-              <div className=" m-2">
-                <img
-                  className=" h-6 w-6 max-w-none"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                  alt="Workflow"
-                />
-              </div>
-              <div className="mr-2 hidden md:block">
-                <h1 className=" text-white rounded-md text-lg font-md">
-                  Questr
-                </h1>
-              </div>
-            </Link>
+    <div className="hidden md:flex fixed left-0 border-r-2 border-white">
+      <div className="flex flex-col h-screen p-3 bg-gray-800 shadow w-64 items-center">
         <div className="">
           <div className="flex-1">
-           
             <ul className="pt-2 pb-4 space-y-1 text-sm hidden md:block">
               <li className="rounded-sm">
-                <a
-                  href="#"
+                <Link
                   className="flex items-center p-2 space-x-3 rounded-md"
                 >
                   <svg
@@ -42,55 +26,47 @@ export default function Sidebar() {
                     />
                   </svg>
                   <span className="text-gray-100">Home</span>
-                </a>
+                </Link>
               </li>
               <li className="rounded-sm">
-                <a
-                  href="#"
+                <Link
                   className="flex items-center p-2 space-x-3 rounded-md"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-gray-100"
                     fill="none"
                     viewBox="0 0 24 24"
+                    strokeWidth={1.5}
                     stroke="currentColor"
-                    strokeWidth={2}
+                    className="w-6 h-6 text-gray-100"
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+                      d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
                     />
                   </svg>
-                  <span className="text-gray-100">Inbox</span>
-                </a>
+
+                  <span className="text-gray-100">Questions</span>
+                </Link>
               </li>
               <li className="rounded-sm">
-                <a
-                  href="#"
+              <Link
                   className="flex items-center p-2 space-x-3 rounded-md"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-gray-100"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                    />
-                  </svg>
-                  <span className="text-gray-100">Orders</span>
-                </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-6 h-6 text-gray-100"
+                >
+                  <path d="M5.566 4.657A4.505 4.505 0 016.75 4.5h10.5c.41 0 .806.055 1.183.157A3 3 0 0015.75 3h-7.5a3 3 0 00-2.684 1.657zM2.25 12a3 3 0 013-3h13.5a3 3 0 013 3v6a3 3 0 01-3 3H5.25a3 3 0 01-3-3v-6zM5.25 7.5c-.41 0-.806.055-1.184.157A3 3 0 016.75 6h10.5a3 3 0 012.683 1.657A4.505 4.505 0 0018.75 7.5H5.25z" />
+                </svg>
+                <span className="text-gray-100">Tags</span>
+                </Link>
               </li>
               <li className="rounded-sm">
-                <a
-                  href="#"
+                <Link
                   className="flex items-center p-2 space-x-3 rounded-md"
                 >
                   <svg
@@ -113,11 +89,10 @@ export default function Sidebar() {
                     />
                   </svg>
                   <span className="text-gray-100">Settings</span>
-                </a>
+                </Link>
               </li>
               <li className="rounded-sm">
-                <a
-                  href="#"
+                <Link
                   className="flex items-center p-2 space-x-3 rounded-md"
                 >
                   <svg
@@ -135,7 +110,7 @@ export default function Sidebar() {
                     />
                   </svg>
                   <span className="text-gray-100">Logout</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

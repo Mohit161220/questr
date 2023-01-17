@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import RightSidebar from "./components/RightSidebar";
 
 function App() {
   let routes;
@@ -32,14 +33,17 @@ function App() {
     }
     routes = (
       <Router>
+          <Navbar />
         <Sidebar />
-        <div className="min-h-screen">
+        <div className="bg-gray-800 min-h-screen">
           <main className=" h-full">
-            <div className="md:ml-52">
-              <Navbar />
-              <Routes>
-                <Route exact path="/" element={<Home/>} />
-              </Routes>
+            <div className="flex md:ml-64">
+                <div className="w-full">
+                  <Routes>
+                    <Route exact path="/" element={<Home />} />
+                  </Routes>
+                </div>
+                <RightSidebar />
             </div>
           </main>
         </div>

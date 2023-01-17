@@ -2,11 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 function Nav() {
   return (
-    <div className="sticky top-0 m-0 p-0">
+    <div className="sticky top-0 m-0 p-0 border-b-2 border-white">
       <nav className="bg-gray-800">
-        <div className="px-0 sm:px-20">
+        <div className="px-0 sm:pr-64">
           <div className="flex items-center h-16 justify-start">
-          <div className="md:hidden">
+            <Link className="md:flex items-center m-20 hover:bg-gray-700 hover:rounded-lg hidden">
+              <div className=" m-2">
+                <img
+                  className=" h-6 w-6 max-w-none"
+                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                  alt="Workflow"
+                />
+              </div>
+              <div className="mr-2 hidden md:block">
+                <h1 className=" text-white rounded-md text-lg font-md">
+                  Questr
+                </h1>
+              </div>
+            </Link>
+            <div className="md:hidden">
               <button
                 type="button"
                 className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
@@ -49,11 +63,11 @@ function Nav() {
               </button>
             </div>
             <Link className="flex md:hidden items-center p-2 hover:bg-gray-700 hover:rounded-lg">
-                <img
-                  className=" h-6 w-6 max-w-none"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                  alt="Workflow"
-                />
+              <img
+                className=" h-6 w-6 max-w-none"
+                src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                alt="Workflow"
+              />
             </Link>
             <div className="w-full sm:mx-4">
               <form className=" px-4">
@@ -87,7 +101,6 @@ function Nav() {
                 alt="Rounded avatar"
               />
             </Link>
-            
           </div>
         </div>
       </nav>
