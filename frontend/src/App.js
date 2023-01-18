@@ -6,51 +6,32 @@ import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import RightSidebar from "./components/RightSidebar";
+import Footer from "./components/Footer";
 
 function App() {
   let routes;
   const [isLogin, setIsLogin] = useState(true);
   if (!isLogin) {
     routes = (
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Login />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route exact path="/" element={<Login />} />
+      </Routes>
     );
   } else {
-    let tweets = [];
-    for (let i = 1; i <= 25; i++) {
-      tweets.push({
-        _id: i,
-        profileImage:
-          "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
-        uername: "MOhit",
-        text: "ldksfjsla fsdalkfjlsa  sjkfadflkajs klasjf kjsaf kla; jfa ;",
-        twitImage:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png",
-      });
-    }
     routes = (
-      <Router>
-          <Navbar />
-        <Sidebar />
-        <div className="bg-gray-800 min-h-screen">
-          <main className=" h-full">
-            <div className="flex md:ml-64">
-                <div className="w-full">
-                  <Routes>
-                    <Route exact path="/" element={<Home />} />
-                  </Routes>
-                </div>
-                <RightSidebar />
-            </div>
-          </main>
+      <div className="bg-gray-100">
+        <Navbar />
+        <div className="xl:w-9/12 mx-auto  grid grid-cols-9 gap-1">
+          <Sidebar />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+          </Routes>
         </div>
-      </Router>
+        <Footer/>
+      </div>
     );
   }
-  return <>{routes}</>;
+  return <Router>{routes}</Router>;
 }
 
 export default App;
