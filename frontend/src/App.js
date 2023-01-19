@@ -14,7 +14,7 @@ function App() {
   if (!isLogin) {
     routes = (
       <Routes>
-        <Route exact path="/" element={<Login />} />
+        <Route exact path="*" element={<Login />} />
       </Routes>
     );
   } else {
@@ -26,6 +26,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/topic" element={<Topic />} />
+            <Route path="*" element={<Home/>}/>
           </Routes>
         </div>
         <Footer/>

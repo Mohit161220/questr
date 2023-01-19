@@ -6,7 +6,7 @@ export default function Sidebar() {
       <div className="fixed"> 
       <ul className="pt-5 space-y-1 text-md hidden md:block">
         <li className="rounded-sm">
-          <Link className="flex items-center p-2 space-x-3 rounded-md">
+          <Link to='/' className="flex items-center p-2 space-x-3 rounded-md">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-8 h-8 text-gray-800"
@@ -25,7 +25,7 @@ export default function Sidebar() {
           </Link>
         </li>
         <li className="rounded-sm">
-          <Link className="flex items-center p-2 space-x-3 rounded-md">
+          <Link to='/' className="flex items-center p-2 space-x-3 rounded-md">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
