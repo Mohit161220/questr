@@ -5,8 +5,8 @@ import Login from "./pages/Login";
 import Sidebar from "./components/Sidebar";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import RightSidebar from "./components/RightSidebar";
 import Footer from "./components/Footer";
+import Topic from "./pages/Topic";
 
 function App() {
   let routes;
@@ -25,6 +25,7 @@ function App() {
           <Sidebar />
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/topic" element={<Topic />} />
           </Routes>
         </div>
         <Footer/>
