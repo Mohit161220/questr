@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Topic from "./pages/Topic";
+import Question_page from './pages/Question_page';
+import Tags from './pages/Tags';
+import Users from './pages/Users';
 
 function App() {
   let routes;
@@ -19,17 +22,21 @@ function App() {
     );
   } else {
     routes = (
-      <div className="bg-gray-100">
+      <div className=" bg-white">
         <Navbar />
         <div className="xl:w-9/12 mx-auto  grid grid-cols-9 gap-1">
           <Sidebar />
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/ask" element={<Question_page />} />
+            <Route exact path="/ask" element={<Question_page />} />
             <Route exact path="/topic" element={<Topic />} />
-            <Route path="*" element={<Home/>}/>
+            <Route exact path="/tags" element={<Tags />} />
+            <Route exact path="/users" element={<Users />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     );
   }
