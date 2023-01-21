@@ -33,7 +33,8 @@ module.exports.signUp = async function(req, res){
 module.exports.signIn = async function(req, res){
      // users sign in will be done
      console.log('SignIn successfull');
-     return res.redirect('/');
+    //  return res.redirect('/');
+    return res.json({message:true})
 }
 
 module.exports.signOut = async function(req, res){

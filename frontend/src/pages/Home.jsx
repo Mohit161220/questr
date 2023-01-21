@@ -1,30 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import axios from "../axios";
 
 import AskQuestionButton from "../components/AskQuestionButton";
 import QuestionCard from "../components/QuestionCard";
 import RightSidebar from "../components/RightSidebar";
 
 function Home() {
-  let questions = [];
-  for (let i = 0; i < 80; i++) {
-    questions.push({
-      id: i,
-      title:
-        "Do classification_report and cross_validate calculate f1-score in different way?",
-      username: "Mohit",
-      views: 2,
-      answers: 0,
-      votes: 3,
-      tags: [
-        "machine - learning",
-        "js",
-        "programming",
-        "web - dev",
-        
-      ],
-      time:"just now"
-    });
-  }
+  const [questions, setQuestions] = useState([]);
+  const getQuestions = async () => {
+    try {
+      const res = await axios.get("/");
+      setQuestions(res.data);
+      console.log(res.data)
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  useEffect(() => {
+    getQuestions();
+  }, []);
+
+
   return (
     <div className="pt-5 md:col-span-7 grid grid-cols-7 col-span-9 min-h-screen gap-y-4">
       <div className="md:col-span-5 col-span-7 mx-1">
@@ -40,10 +37,10 @@ function Home() {
               Most Viewed
             </button>
           </div>
-          <AskQuestionButton/>
+          <AskQuestionButton />
         </div>
         {questions.map((question) => (
-          <QuestionCard key={question.id} question={question} />
+          <QuestionCard key={question._id} question={question} />
         ))}
       </div>
       <RightSidebar />

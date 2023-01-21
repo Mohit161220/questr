@@ -88,7 +88,7 @@ function Nav() {
         <div className="flex items-center justify-evenly md:col-span-2 col-span-3 m-0 p-0 h-16">
           <Link className="">
             <img
-              class="w-10 h-10 rounded-full"
+              className="w-10 h-10 rounded-full"
               src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               alt="Rounded avatar"
             />

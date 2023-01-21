@@ -7,14 +7,15 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Topic from "./pages/Topic";
+import Question from "./pages/Question";
 
 function App() {
   let routes;
-  const [isLogin, setIsLogin] = useState(true);
-  if (!isLogin) {
+  const [isAuth, setIsAuth] = useState(false);
+  if (!isAuth) {
     routes = (
       <Routes>
-        <Route exact path="*" element={<Login />} />
+        <Route exact path="*" element={<Login  setIsAuth={setIsAuth}/>} />
       </Routes>
     );
   } else {
@@ -26,10 +27,11 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/topic" element={<Topic />} />
-            <Route path="*" element={<Home/>}/>
+            <Route exact path="/question" element={<Question />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     );
   }

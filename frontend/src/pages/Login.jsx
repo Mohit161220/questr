@@ -1,10 +1,37 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Login() {
+import axios from "../axios";
+
+export default function Login(props) {
   const [isLogin, setIsLogin] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const changeLogin = () => {
     setIsLogin(!isLogin);
+  };
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+    console.log(email);
+  };
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+    console.log(password);
+  };
+  const checkAuth = async (e) => {
+    e.preventDefault();
+    console.log(email);
+    console.log(password);
+    try {
+      const res = await axios.post("/users/sign-in", {
+        email: email,
+        password: password,
+      });
+      props.setIsAuth(res.data.message);
+      console.log(res.data);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
   return (
     <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
@@ -15,10 +42,7 @@ export default function Login() {
         <form className="mt-6">
           {isLogin || (
             <div className="mb-2">
-              <label
-                for="username"
-                className="block text-sm font-semibold text-gray-800"
-              >
+              <label className="block text-sm font-semibold text-gray-800">
                 Username
               </label>
               <input
@@ -28,35 +52,30 @@ export default function Login() {
             </div>
           )}
           <div className="mb-2">
-            <label
-              for="email"
-              className="block text-sm font-semibold text-gray-800"
-            >
+            <label className="block text-sm font-semibold text-gray-800">
               Email
             </label>
             <input
               type="email"
+              value={email}
+              onChange={handleEmailChange}
               className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           <div className="mb-2">
-            <label
-              for="password"
-              className="block text-sm font-semibold text-gray-800"
-            >
+            <label className="block text-sm font-semibold text-gray-800">
               Password
             </label>
             <input
               type="password"
+              value={password}
+              onChange={handlePasswordChange}
               className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
             />
           </div>
           {isLogin || (
             <div className="mb-2">
-              <label
-                for="password"
-                className="block text-sm font-semibold text-gray-800"
-              >
+              <label className="block text-sm font-semibold text-gray-800">
                 Password
               </label>
               <input
@@ -72,7 +91,10 @@ export default function Login() {
           )}
           {isLogin && (
             <div className="mt-6">
-              <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+              <button
+                onClick={checkAuth}
+                className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600"
+              >
                 Login
               </button>
             </div>
