@@ -10,6 +10,7 @@ import Topic from "./pages/Topic";
 import AskQuestion from "./pages/AskQuestion";
 import Tags from "./pages/Tags";
 import Users from "./pages/Users";
+import Question from "./pages/Question";
 
 function App() {
   let routes;
@@ -29,7 +30,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/ask" element={<AskQuestion />} />
-            <Route exact path="/ask" element={<AskQuestion />} />
+            <Route exact path="/question" element={<Question />} />
             <Route exact path="/topic" element={<Topic />} />
             <Route exact path="/tags" element={<Tags />} />
             <Route exact path="/users" element={<Users />} />
