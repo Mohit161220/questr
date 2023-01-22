@@ -2,12 +2,12 @@ import React from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/solid';
 import TagsComp from '../components/TagsComp';
 
-function Tags() {
+export default function AllTopics() {
     return (
         <div className=' pt-5 md:col-span-7 col-span-11 min-h-screen'>
-            <h1 className='text-3xl'>Tags</h1>
+            <h1 className='texport default ext-3xl'>AllTopics</h1>
             <p>A tag is a keyword or label that categorizes your question with other, similar questions. Using the right tags makes it easier for others to find and answer your question.</p>
-            <a>Show all tag synonyms</a>
+            <p>Show all tag synonyms</p>
 
             <div className='flex justify-between'>
                 <div className='flex items-center rounded-full bg-slate-100 w-3/12'>
@@ -46,5 +46,3 @@ function Tags() {
         </div>
     )
 }
-
-export default Tags

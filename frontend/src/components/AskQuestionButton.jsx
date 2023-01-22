@@ -1,6 +1,8 @@
+import {Link} from 'react-router-dom'
+
 export default function AskQuestionButton() {
   return (
-    <button className="h-8  mr-0 flex items-center p-3 rounded-md bg-green-500 hover:bg-green-700 text-white font-bold  border border-green-700 ">
+    <Link to='/ask' className="h-8  mr-0 flex items-center p-3 rounded-md bg-green-500 hover:bg-green-700 text-white font-bold  border border-green-700 ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -16,6 +18,6 @@ export default function AskQuestionButton() {
         />
       </svg>
       <span className="font-thin">Ask Question</span>
-    </button>
+    </Link >
   );
 }

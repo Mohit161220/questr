@@ -45,6 +45,7 @@ module.exports.QuestionById = async function(req, res){
         const id = req.params.id; 
         console.log(req.params.id);
         const question = await QUESTION.findById(id).populate('answers');
+        console.log(question)
         // here we also can add who asked the question and who answered it by populating
         return res.status(200).json(question);
     } catch (error) {

@@ -8,9 +8,10 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Topic from "./pages/Topic";
 import AskQuestion from "./pages/AskQuestion";
-import Tags from "./pages/Tags";
+import AllTopics from "./pages/AllTopics";
 import Users from "./pages/Users";
 import Question from "./pages/Question";
+
 
 function App() {
   let routes;
@@ -30,9 +31,9 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/ask" element={<AskQuestion />} />
-            <Route exact path="/question" element={<Question />} />
+            <Route exact path="/:qid/question" element={<Question />} />
             <Route exact path="/topic" element={<Topic />} />
-            <Route exact path="/tags" element={<Tags />} />
+            <Route exact path="/allTopics" element={<AllTopics />} />
             <Route exact path="/users" element={<Users />} />
             <Route path="*" element={<Home />} />
           </Routes>

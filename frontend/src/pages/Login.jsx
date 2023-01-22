@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+// import { useCallback } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -19,7 +19,7 @@ export default function Login(props) {
     setPassword(event.target.value);
     console.log(password);
   };
-  const isauth =useCallback(()=>{props.setIsAuth(true)},[])
+  // const isauth =useCallback(()=>{props.setIsAuth(true)},[])
   const checkAuth = async (e) => {
     e.preventDefault();
     console.log(email);
@@ -30,7 +30,7 @@ export default function Login(props) {
         password: password,
       });
      if(res.data.message===true)
-     isauth();
+    //  isauth();
       console.log(res.data);
     } catch (error) {
       console.log(error.message);

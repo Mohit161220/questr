@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 export default function UserTime(props) {
   return (
@@ -7,7 +8,7 @@ export default function UserTime(props) {
       <Link className="px-2 text-blue-600  hover:text-blue-400">
         {props.username}
       </Link>
-      <div className="px-2 ">{props.time}</div>
+      <div className="px-2 ">{moment(props.time).fromNow()}</div>
     </div>
   );
 }

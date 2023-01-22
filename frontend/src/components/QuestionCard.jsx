@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import moment from 'moment'
 
 import TagList from "./TagList";
 import UserTime from "./UserTime";
@@ -16,13 +17,13 @@ export default function QuestionCard(props) {
         <div className="text-sm my-1 mr-3">{question.views} views</div> */}
       </div>
       <div className=" md:col-span-4 col-span-6 ml-1">
-        <Link className="text-blue-600 hover:text-blue-400">
+        <Link to={`/${question._id}/question`} className="text-blue-600 hover:text-blue-400">
           {question.title}
         </Link>
         {/* <TagList key={question._id} tags={question.tags} /> */}
    
 
-        <UserTime username={question.user} time={question.createdAt} />
+        <UserTime username={question.user} time={moment("2023-01-18T17:55:59.052Z").fromNow()} />
       </div>
     </div>
   );

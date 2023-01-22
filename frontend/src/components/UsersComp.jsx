@@ -1,6 +1,7 @@
 import React from 'react'
 
-function UsersComp() {
+function UsersComp(props) {
+    const user=props.user;
     return (
         <div className='flex p-2 m-2'>
             <div className='m-1 mr-2 '>
@@ -8,7 +9,7 @@ function UsersComp() {
             </div>
 
             <div className='p-1'>
-                <h1 className='text-blue-600  hover:text-blue-400 text-lg '>Name</h1>
+                <h1 className='text-blue-600  hover:text-blue-400 text-lg '>{user.username}</h1>
                 <p className='text-sm text-gray-500'>User_id</p>
                 <p className='text-sm'>11234</p>
                 <p className='text-sm text-blue-600  hover:text-blue-400'>java,c++</p>
